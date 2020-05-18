@@ -1,0 +1,2 @@
+class ExtraJointuresController < ApplicationController
+end
