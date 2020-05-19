@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @boats = Boat.all
+    @user = current_user
   end
 end
