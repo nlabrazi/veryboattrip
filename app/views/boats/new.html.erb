@@ -1,0 +1,18 @@
+<h2>My boats</h2>
+
+<%= simple_form_for [ @user, @boat ] do |f| %>
+
+  <div class="form-inputs-boats">
+    <%= f.input :name %>
+    <%= f.input :boat_type %>
+    <%= f.input :size %>
+    <%= f.input :description %>
+    <%= f.input :photos, as: :file, input_html: { multiple: "True" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Add my boaty boat", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to 'back to my boats', user_boats_path %>
