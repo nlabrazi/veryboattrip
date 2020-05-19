@@ -1,31 +1,18 @@
 <h2>My boats</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for [ @user, @boat ] do |f| %>
 
-  <div class="form-inputs">
-    <%= f.input :name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Name" }%>
-    <%= f.input :type,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Type" } %>
-    <%= f.input :size,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Size" } %>
-    <%= f.input :description,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Description" } %>
+  <div class="form-inputs-boats">
+    <%= f.input :name %>
+    <%= f.input :boat_type %>
+    <%= f.input :size %>
+    <%= f.input :description %>
     <%= f.input :photos, as: :file, input_html: { multiple: "True" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Add my boat" %>
+    <%= f.submit "Add my boaty boat", class: "btn btn-primary" %>
   </div>
 <% end %>
 
-<%= render new %>
+<%= link_to 'back to my boats', user_boats_path %>
