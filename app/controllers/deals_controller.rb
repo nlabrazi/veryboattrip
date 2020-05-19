@@ -1,7 +1,8 @@
 class DealsController < ApplicationController
-    before_action :set_deal
+    # before_action :set_deal
 
   def index
+    @user = User.find(params[:user_id])
     @deals = Deal.all
   end
 
@@ -28,6 +29,7 @@ class DealsController < ApplicationController
   end
 
   # def deal_params
-  #   params.require(:deal).permit(, :photo)
+  #   params.require(:deal).permit( :photo)
   # end
+
 end
