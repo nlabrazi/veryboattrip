@@ -1,13 +1,12 @@
 class BoatsController < ApplicationController
-  # before_action :set_boat
+  before_action :set_boat
 
   def index
-    @user = User.find(params[:user_id])
-    @boats = Boat.all
+    @boats = current_user.boats
   end
 
   def show
-    @user = User.find(params[:user_id])
+
   end
 
   def new
