@@ -1,13 +1,10 @@
-<div class="show header">
-  <% @boat.photos.each do |photo| %>
-  <%= cl_image_tag photos[0].key, height: 300, width: 400, crop: :fill %>
-  <% end %>
+<div class="card-trip pt-4">
+  <%= cl_image_tag @boat.photos[0].key, height: 300, width: 400, crop: :fill %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @boat.name %></h2>
+    </div>
+    <h3 class="card-trip-pricing">Taille du bateau : <%= @boat.size %></h3>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
 </div>
-
-<div>
-  <h1>Mon plus beau bateau</h1>
-</div>
-<li><%= @boat.name %></li>
-<li><%= @boat.description %></li>
-<li><%= @boat.size %> mètres</li>
-
