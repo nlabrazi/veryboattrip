@@ -34,18 +34,6 @@
 
 <!-- END CAROUSSEL OF GOD -->
 
-
-
-
-
-<!-- BEGIN FLASH PROMO BAR -->
-<!-- TODO -->
-<!-- END FLASH PROMO BAR -->
-
-
-
-
-
 <!-- BEGIN CARDS -->
 
 <section class="block first" id="product">
@@ -54,52 +42,25 @@
         <span class="line"></span>
 
     <div class="card-deck">
+      <% @boats.each do |boat| %>
+      <% if boat.photos.attached? %>
         <div class="card">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1527431293370-0cd188ca5d15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-
-        <div class="card">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1527431293370-0cd188ca5d15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <%= cl_image_tag boat.photos[0].key, height: 300, width: 400, crop: :fill %>
+          <div class="card-body">
+            <h5 class="card-title"> <%= boat.name  %> </h5>
+            <p class="card-text"><%= boat.description %></p>
           </div>
           <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
+            <small class="text-muted">Last updated 3 mins ago</small>
           </div>
-      </div>
-
-      <div class="card">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1527431293370-0cd188ca5d15?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      </div>
-      <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-  </div>
-</div>
+      <% end %>
+      <% end %>
+        </div>
+    </div>
 
 </section>
 
 <!-- END CARDS -->
-
-<% @boats.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-
-
-
-
 
 
 <!-- BEGIN FOOTER -->
