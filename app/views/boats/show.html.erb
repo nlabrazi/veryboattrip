@@ -4,7 +4,16 @@
     <div>
       <h2><%= @boat.name %></h2>
     </div>
-    <h3 class="card-trip-pricing">Taille du bateau : <%= @boat.size %></h3>
+    <h3 class="card-trip-pricing">Taille du bateau : <%= @boat.size %> meters</h3>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
+  <div class="container text-center">
+    <h2>Description :</h2>
+      <div>
+        <p><%= @boat.description %></p>
+      </div>
+  </div>
+  <br>
+  <br>
+  <br>
 </div>
