@@ -7,6 +7,7 @@ class BoatsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
   end
 
   def new
@@ -32,6 +33,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :size, :boat_type, :description, :photos)
+    params.require(:boat).permit(:name, :size, :boat_type, :description, photos: [])
   end
 end
