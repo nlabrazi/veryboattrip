@@ -1,3 +1,13 @@
-<h1>Mon plus beau bateau</h1>
+<div class="show header">
+  <% @boat.photos.each do |photo| %>
+  <%= cl_image_tag photos[0].key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+</div>
 
+<div>
+  <h1>Mon plus beau bateau</h1>
+</div>
 <li><%= @boat.name %></li>
+<li><%= @boat.description %></li>
+<li><%= @boat.size %> mètres</li>
+
