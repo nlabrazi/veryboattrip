@@ -1,25 +1,22 @@
 class BoatsController < ApplicationController
-  before_action :set_boat
+  before_action :set_boat, only: [:show]
+  before_action :set_user, only: [:index, :new, :create]
 
   def index
-    @boats = current_user.boats
   end
 
   def show
-
   end
 
   def new
     @boat = Boat.new
-    @user = User.find(params[:user_id])
   end
 
   def create
     @boat = Boat.new(boat_params)
-    @user = User.find(params[:user_id])
     @boat.user = @user
     if @boat.save
-      redirect_to user_boats_path(@user)
+      redirect_to boat_path(@boat)
     else
       render :new
     end
@@ -29,6 +26,10 @@ class BoatsController < ApplicationController
 
   def set_boat
     @boat = Boat.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
   end
 
   def boat_params

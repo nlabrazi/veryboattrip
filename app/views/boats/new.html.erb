@@ -1,6 +1,6 @@
 <h2>My boats</h2>
 
-<%= simple_form_for [ @user, @boat ] do |f| %>
+<%= simple_form_for [ @boat ] do |f| %>
 
   <div class="form-inputs-boats">
     <%= f.input :name %>
@@ -15,4 +15,4 @@
   </div>
 <% end %>
 
-<%= link_to 'back to my boats', user_boats_path %>
+<%= link_to 'back to my boats', dashboard_path %>
