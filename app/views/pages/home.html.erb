@@ -36,25 +36,30 @@
 
 <!-- BEGIN CARDS -->
 
+              <h2>Latest Products</h2>
+        <span class="line"></span>
+              <% @boats.each do |boat| %>
+      <% if boat.photos.attached? %>
 <section class="block first" id="product">
 
-        <h2>Latest Products</h2>
-        <span class="line"></span>
+
 
     <div class="card-deck">
-      <% @boats.each do |boat| %>
-      <% if boat.photos.attached? %>
+
         <div class="card">
-          <%= cl_image_tag boat.photos[0].key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag boat.photos[0].key, crop: :fill %>
           <div class="card-body">
             <h5 class="card-title"> <%= boat.name  %> </h5>
             <p class="card-text"><%= boat.description %></p>
           </div>
           <div class="card-footer">
             <small class="text-muted">Last updated 3 mins ago</small>
+                  <% end %>
+                              <% end %>
+
           </div>
-      <% end %>
-      <% end %>
+
+
         </div>
     </div>
 
