@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to home_path, class: "navbar-brand" do %>
     <%= image_tag "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.paperblog.fr%2Fi%2F587%2F5876180%2Fgta-sur-mobiles-rockstar-remet-ca-avec-vice-c-L-HnSpGn.jpeg" %>
     <% end %>
 
@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", home_path, class: "nav-link" %>
+          <%= link_to "+ Add Your Boat", new_boat_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user.photo.key, height: 40, width: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
