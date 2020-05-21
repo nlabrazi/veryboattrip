@@ -11,3 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.content-wrapper {
+  min-height: calc(100vh - 70px - 80px);
+}
+
+// Mapbox Jscript
+@import 'mapbox-gl/dist/mapbox-gl';
