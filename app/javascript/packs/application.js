@@ -10,3 +10,6 @@ Turbolinks.start()
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+import { initAutocomplete } from '../plugins/init_autocomplete';
+initAutocomplete();
