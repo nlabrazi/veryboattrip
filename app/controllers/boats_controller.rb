@@ -8,6 +8,13 @@ class BoatsController < ApplicationController
 
   def show
     @deal = Deal.new
+    @deals = Deal.where(boat_id: @boat.id)
+    @bookings_dates = @deals.map do |deal|
+      {
+        from: deal.start_date,
+        to:   deal.end_date
+      }
+    end
     @coordinates = Geocoder.search(@boat.address).first.coordinates
     @marker = {
         lat: @coordinates[0],
