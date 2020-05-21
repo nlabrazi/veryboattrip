@@ -3,17 +3,15 @@ class BoatsController < ApplicationController
   before_action :set_user, only: [:index, :new, :create]
 
   def index
-    @boats = Boats.geocoded
+    @boats = Boat.all
   end
 
   def show
     @deal = Deal.new
-    @markers = @boats.map do |boat|
-      {
-        lat: boat.latitude,
-        lng: boat.longitude
+    @marker = {
+        lat: @boat.latitude,
+        lng: @boat.longitude
       }
-    end
   end
 
   def new
