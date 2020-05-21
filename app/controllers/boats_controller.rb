@@ -3,6 +3,7 @@ class BoatsController < ApplicationController
   before_action :set_user, only: [:index, :new, :create]
 
   def index
+    @boats = Boat.all
   end
 
   def show
@@ -10,10 +11,15 @@ class BoatsController < ApplicationController
     @deals = Deal.where(boat_id: @boat.id)
     @deals_dates = @deals.map do |deal|
       {
-        from: booking.start_date,
-        to:   booking.end_date
+        from: deal.start_date,
+        to:   deal.end_date
       }
     end
+    @coordinates = Geocoder.search(@boat.address).first.coordinates
+    @marker = {
+        lat: @coordinates[0],
+        lng: @coordinates[1]
+      }
   end
 
   def new
@@ -41,6 +47,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :size, :boat_type, :description, photos: [])
+    params.require(:boat).permit(:address, :name, :size, :boat_type, :description, photos: [])
   end
 end

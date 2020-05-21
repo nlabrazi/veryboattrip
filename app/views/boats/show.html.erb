@@ -9,13 +9,19 @@
   </div>
   <div class="container text-center">
     <h2>Description :</h2>
-      <div>
-        <p><%= @boat.description %></p>
-      </div>
+    <div>
+      <p><%= @boat.description %></p>
+    </div>
   </div>
   <br>
   <br>
   <br>
+
+  <div class="row mt-4">
+    <div id="map" class="container-map" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
 </div>
 
 <div class="container">
