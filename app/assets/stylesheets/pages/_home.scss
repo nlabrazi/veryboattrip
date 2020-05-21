@@ -1,10 +1,5 @@
 // Specific CSS for your home-page
 
-@font-face {
-font-family: "pricedown";
-src: "../polices/pricedown.ttf";
-}
-
 .profile {
     position: absolute;
     top: -12px;
@@ -56,76 +51,7 @@ src: "../polices/pricedown.ttf";
 }
 
 
-
-
-
-
-.carousel-inner {
-  height: 400px;
-  margin: 5px 0 5px;
-}
-
-.carousel-item {
-  width: 100vw;
-  height:100vh;
-}
-
-#product {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-}
-
-.block header, .inner-block header {
-    text-align: center;
-    color: #6d7176;
-    margin-bottom: 48px;
-}
-
-.card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-}
-
-.card-deck h2 {
-    text-align: center;
-}
-
-.card {
-    padding: 5px;
-    text-align: center;
-}
-
-
 .row {
     margin-left: -15px;
     margin-right: -15px;
-}
-
-#footer {
-  background: black;
-  color: white;
-  font-size: 20px;
-  padding: 20px;
-  padding-left: 0;
-  margin-left: -5px;
-  list-style: none;
-  text-align: center;
-}
-
-#footer li {
-  display: inline-block;
-  padding-right: 5px;
-  padding-left: 5px;
-  text-align: center;
-}
-
-#footer a {
-  font-size: 20px;
-  color: lightgrey;
-}
-
-#footer a:hover {
-  color: white;
 }

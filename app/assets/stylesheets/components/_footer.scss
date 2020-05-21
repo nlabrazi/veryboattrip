@@ -1,0 +1,26 @@
+#footer {
+  background:linear-gradient(-120deg, #021B79, #0575E6, #205E9B);
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+  text-align: center;
+}
+
+#footer li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+  text-align: center;
+}
+
+#footer a {
+  font-size: 20px;
+  color: white;
+}
+
+#footer a:hover {
+  color: black;
+}

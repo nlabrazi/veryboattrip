@@ -3,9 +3,17 @@ class BoatsController < ApplicationController
   before_action :set_user, only: [:index, :new, :create]
 
   def index
+    @boats = Boats.geocoded
   end
 
   def show
+    @deal = Deal.new
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+    end
   end
 
   def new
@@ -33,6 +41,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :size, :boat_type, :description, photos: [])
+    params.require(:boat).permit(:longitude, :latitude, :name, :size, :boat_type, :description, photos: [])
   end
 end
