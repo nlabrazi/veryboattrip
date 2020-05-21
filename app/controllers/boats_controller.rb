@@ -8,9 +8,10 @@ class BoatsController < ApplicationController
 
   def show
     @deal = Deal.new
+    @coordinates = Geocoder.search(@boat.address).first.coordinates
     @marker = {
-        lat: @boat.latitude,
-        lng: @boat.longitude
+        lat: @coordinates[0],
+        lng: @coordinates[1]
       }
   end
 
@@ -39,6 +40,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:longitude, :latitude, :name, :size, :boat_type, :description, photos: [])
+    params.require(:boat).permit(:address, :name, :size, :boat_type, :description, photos: [])
   end
 end
