@@ -6,6 +6,14 @@ class BoatsController < ApplicationController
   end
 
   def show
+    @deal = Deal.new
+    @deals = Deal.where(boat_id: @boat.id)
+    @deals_dates = @deals.map do |deal|
+      {
+        from: booking.start_date,
+        to:   booking.end_date
+      }
+    end
   end
 
   def new

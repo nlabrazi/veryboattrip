@@ -15,6 +15,8 @@ class DealsController < ApplicationController
 
   def create
     @deal = Deal.new(deal_params)
+    @boat = Boat.find(params[:boat_id])
+    @deal.boat = @boat
     if @deal.save
       redirect_to deal_path(@deal)
     else
@@ -28,8 +30,8 @@ class DealsController < ApplicationController
     @deal = Deal.find(params[:id])
   end
 
-  # def deal_params
-  #   params.require(:deal).permit( :photo)
-  # end
+  def deal_params
+    params.require(:deal).permit( :start_date, :end_date, :status)
+  end
 
 end
