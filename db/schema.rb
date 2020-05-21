@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_102857) do
+ActiveRecord::Schema.define(version: 2020_05_21_142016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,13 +53,11 @@ ActiveRecord::Schema.define(version: 2020_05_21_102857) do
   create_table "deals", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "boat_id", null: false
-    t.bigint "review_id", null: false
     t.date "date"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["boat_id"], name: "index_deals_on_boat_id"
-    t.index ["review_id"], name: "index_deals_on_review_id"
     t.index ["user_id"], name: "index_deals_on_user_id"
   end
 
@@ -106,7 +104,6 @@ ActiveRecord::Schema.define(version: 2020_05_21_102857) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "deals", "boats"
-  add_foreign_key "deals", "reviews"
   add_foreign_key "deals", "users"
   add_foreign_key "extra_jointures", "deals"
   add_foreign_key "extra_jointures", "extras"
