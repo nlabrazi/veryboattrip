@@ -1,32 +1,30 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to home_path, class: "navbar-brand" do %>
-    <%= image_tag "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia.paperblog.fr%2Fi%2F587%2F5876180%2Fgta-sur-mobiles-rockstar-remet-ca-avec-vice-c-L-HnSpGn.jpeg" %>
-    <% end %>
-
+  <%= image_tag "logo.png" %>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
+  <input class="form-control form-control w-50" type="text" placeholder="Find your dream..." aria-label="Search">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Add Your Boat", new_boat_path, class: "btn btn-primary" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.photo.key, height: 40, width: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "My Dashboard", dashboard_path, class: "dropdown-item" %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
+      <li class="nav-item active">
+        <%= link_to "Add Your Boat", new_boat_path, class: "btn btn-primary" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= cl_image_tag current_user.photo.key, height: 40, width: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "My Dashboard", dashboard_path, class: "dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
       <% end %>
     </ul>
   </div>
