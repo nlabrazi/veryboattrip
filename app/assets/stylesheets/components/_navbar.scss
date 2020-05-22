@@ -20,11 +20,13 @@
 
 .btn {
   margin-right: 20px;
-  background-color: #00FFFF;
+  background-color: white;
   color: #ff0dbf;
   border-color: #ff0dbf;
 }
 
-.btn:focus {
-  background-color: #black;
+.btn:hover {
+  background-color: #00FFFF;
+  color: #ff0dbf;
+  border-color: #ff0dbf;
 }
