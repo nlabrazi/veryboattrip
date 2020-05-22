@@ -13,4 +13,8 @@ Rails.application.routes.draw do
     resources :review, only: [ :destroy ]
   end
   resources :boats, only: [ :destroy ]
+  resources :deals do
+    patch "validate", to: "deals#validate"
+  end
 end
+
