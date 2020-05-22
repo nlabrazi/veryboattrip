@@ -8,7 +8,17 @@ form {
   padding: 20px;
   width: 800px;
   border-radius: 10px;
-  box-shadow: 0 8px 15px #00FFFF, 0 5px 8px #00FFFF;
+  // box-shadow: 0 8px 15px #00FFFF, 0 5px 8px #00FFFF;
+  margin: auto;
+  color: black
+}
+
+.flat-form {
+  background-color: transparent !important;
+  padding: 20px;
+  width: 100% !important;
+  border-radius: 10px;
+  // box-shadow: 0 8px 15px #00FFFF, 0 5px 8px #00FFFF;
   margin: auto;
   color: black
 }
