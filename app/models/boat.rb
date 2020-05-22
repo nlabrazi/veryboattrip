@@ -7,6 +7,7 @@ class Boat < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :boat_type, presence: true
   validates :size, presence: true
+  validates :price, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
