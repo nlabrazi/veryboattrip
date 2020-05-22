@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "pricedown";
+  src: url(asset-path('./fonts/pricedown.ttf')) format("truetype");
+}
+
 form {
   background-color: white;
   padding: 20px;
@@ -12,7 +17,7 @@ h1, h2, h3
 {
   font-size: 32px;
   text-shadow: 0 8px 15px #ff0dbf, 0 5px 8px #ff0dbf;
-  font-family: "Segoe print", Arial, Helvetica, sans-serif;
+  font-family: "pricedown", Arial, Helvetica, sans-serif;
   padding: 32px;
   font-weight: lighter;
   text-align: center;
