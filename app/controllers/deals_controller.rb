@@ -7,10 +7,16 @@ class DealsController < ApplicationController
   end
 
   def show
+
+    @deals = current_user.deals
   end
 
   def new
     @deal = Deal.new
+  end
+
+  def update
+
   end
 
   def create
@@ -24,6 +30,12 @@ class DealsController < ApplicationController
     else
       render "boats/show"
     end
+  end
+
+  def validate
+    @deal = Deal.find(params[:deal_id])
+    @deal.update(status: "Accepted")
+    redirect_to dashboard_path
   end
 
   private
