@@ -1,52 +1,39 @@
-<body>
-  <div class="image_header">
-    <%= cl_image_tag @boat.photos[0].key, height: 300, width: 400, crop: :fill %>
-    <%= cl_image_tag @boat.photos[1].key, height: 300, width: 400, crop: :fill %>
+<div class="card-trip pt-4">
+  <%= cl_image_tag @boat.photos[0].key, height: 300, width: 400, crop: :fill %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @boat.name %></h2>
+    </div>
+    <h3 class="card-trip-pricing">Taille du bateau : <%= @boat.size %> meters</h3>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+  <div class="container text-center">
+    <h2>Description :</h2>
+    <div>
+      <p><%= @boat.description %></p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div class="row mt-4">
+    <div id="map" class="container-map" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 
-  <div class="useful-width">
-    <div class="infos_bateau">
-      <ul>
-        <li><p>Le bateau du moment</p></li>
-        <li><h1><%= @boat.name %></h1></li>
-        <li><span class="row"><i class="fas fa-map-marker-alt"></i><p><%=@boat.address%></p></span></li>
-      </ul>
-      <div class="avatar">
-        <span><%= cl_image_tag current_user.photo.key, height: 70, width: 70, radius: :max %></span>
-        <p><%= current_user.first_name %></p>
-      </div>
-    </div>
-    <div class="bloc_infos">
-      <div class="ligne row"><i class="fas fa-anchor"></i> <p><%= @boat.size %> meters</p></div>
-    </div>
-    <div class="description">
-      <ul>
-        <li><p><%= @boat.description %></p></li>
-        <li><div class="mapbox">
-        <div id="map" class="container-map" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-        </li>
-      </ul>
-    </div>
-      <div class="description_text">
-    </div>
-  </div>
+</div>
 
 <div class="container">
   <div class="form-wrapper">
+    <h2>Book a Boat</h2>
     <%= simple_form_for [@boat, @deal] do |f| %>
-      <%= f.input  :start_date, label: "Sélectionnez vos dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
-      <%= f.input  :end_date, label: false,  as: :string, required: false, input_html: {id: "range_end", class: "d-none"} %>
+      <%= f.input  :start_date, label: "Sélectionnez vos dates:", as: :string, required: false, input_html: {id: "range_start"} %>
+      <%= f.input  :end_date, label: false,  as: :string, required: false, input_html: {id: "range_end"} %>
       <%= f.button :submit, "Book", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
-</body>
-
-
-</div>
-
-
 <div
   id="booking-form-div"
   data-bookings="<%= @bookings_dates.to_json %>"
