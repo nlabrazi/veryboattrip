@@ -30,3 +30,23 @@
   color: #ff0dbf;
   border-color: #ff0dbf;
 }
+
+#v-pills-tab {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#v-pills-tab > a {
+  color: #ff0dbf;
+}
+
+.nav-pills .nav-link.active {
+  background-color: white;
+  border: solid 1px;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #00FFFF;
+  color: #ff0dbf;
+  border-color: #ff0dbf;
+}
