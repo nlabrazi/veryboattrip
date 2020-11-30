@@ -1,4 +1,4 @@
-###Student Project @LeWagon
+## Student Project @LeWagon
 
 yarn add flatpickr
 yarn add mapbox-gl
